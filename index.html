@@ -9,12 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2 style="font-family:cursive;" class="text-center"><b>CLASSROOM LIBRARY</b></h2>
     <!-- Main table -->
     <div class="container col-6">
-        <table class="table table-bordered text-center border border-success border-4">
+        <table class="table table-bordered bg-light table-hover text-center border border-success border-4">
             <thead>
                 <tr class="bg-info">
                     <th>Sl No</th>
@@ -26,61 +27,73 @@
                 <tr>
                     <td>1</td>
                     <td><i>Curious george learns the Alphabets</i></td>
-                    <td class="detail" id="detail1"><a>View details</a></td>
+                    <td class="detail" id="detail1"><button type="button" class="btn btn-success rounded-pill" data-toggle="modal"data-target="#myModal">View details</button></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td><i>Pete the cat I love my white shoes</i></td>
-                    <td class="detail" id="detail2"><a>View details</a></td>
+                    <td class="detail" id="detail2"><button type="button" class="btn btn-success rounded-pill" data-toggle="modal"data-target="#myModal">View details</button></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td><i>Tom and Jerry meet little quack</i></td>
-                    <td class="detail" id="detail3"><a>View details</a></td>
+                    <td class="detail" id="detail3"><button type="button" class="btn btn-success rounded-pill" data-toggle="modal"data-target="#myModal">View details</button></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td><i>The Berenstain bears to the doctor</i></td>
-                    <td class="detail" id="detail4"><a>View details</a></td>
+                    <td class="detail" id="detail4"><button type="button" class="btn btn-success rounded-pill" data-toggle="modal"data-target="#myModal">View details</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <!-- Modal window -->
-    <div class="container col-8 alert bg-warning">
-        <button class="btn-close" data-bs-dismiss="alert"></button>
-        <div class="row">
-            <div class="col">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Table detail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Title:</td>
-                            <td><span id="bookTitle"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Author:</td>
-                            <td><span id="bookAuthor"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Publisher:</td>
-                            <td><span id="bookPublisher"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Reading Age:</td>
-                            <td><span id="bookAge"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col">
-                <img id="bookImage" src="" alt="" class="img-thumbnail">   
+    <!-- Modal window -->    
+    <div id="myModal"class="modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary">
+                    <button id="closeButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-warning">
+                    <div class="row">
+                        <div class="col-8 d-flex justify-content-center">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><u>Book details</u></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Title:</td>
+                                        <td><span id="bookTitle"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Author:</td>
+                                        <td><span id="bookAuthor"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Publisher:</td>
+                                        <td><span id="bookPublisher"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reading Age:</td>
+                                        <td><span id="bookAge"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-4">
+                            <img id="bookImage" src="" alt="" class="img-thumbnail">   
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-secondary">
+                </div>
             </div>
         </div>
-    </div>
+    </div>   
 </body>
 </html>
